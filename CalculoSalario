@@ -1,0 +1,37 @@
+import java.util.Scanner;
+
+public class CalculoSalario {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        
+        // Entrada de dados
+        System.out.print("Digite o número de horas trabalhadas: ");
+        double horasTrabalhadas = input.nextDouble();
+        
+        System.out.print("Digite o valor do salário mínimo: R$ ");
+        double salarioMinimo = input.nextDouble();
+        
+        // Cálculos
+        double valorHora = salarioMinimo / 8;  // 1/8 do salário mínimo por hora
+        double salarioBruto = horasTrabalhadas * valorHora;
+        double imposto = salarioBruto * 0.03;  // 3% de imposto
+        double salarioLiquido = salarioBruto - imposto;
+        
+        // Saída dos resultados
+        System.out.printf("\nValor da hora trabalhada: R$ %.2f%n", valorHora);
+        System.out.printf("Salário bruto: R$ %.2f%n", salarioBruto);
+        System.out.printf("Imposto (3%%): R$ %.2f%n", imposto);
+        System.out.printf("Salário líquido a receber: R$ %.2f%n", salarioLiquido);
+        
+        input.close();
+    }
+}
+
+/*13. Faça um programa que receba o número de horas trabalhadas e o valor
+do salário mínimo, calcule e mostre o salário a receber seguindo estas
+regras:
+a. a hora trabalhada vale um décimo do salário mínimo;
+b. o salário bruto equivale ao número de horas trabalhadas
+multiplicado pelo valor da hora trabalhada;
+c. o imposto equivale a 3% do salário bruto;
+d. o salário a receber equivale ao salário bruto menos o imposto */
